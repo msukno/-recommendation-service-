@@ -31,11 +31,11 @@ public class OpenAIRecommendService implements SongRecommendService {
         this.chatClient = chatClient;
     }
 
-    public Message createUserMessage(String userInput) {
+    private Message createUserMessage(String userInput) {
         return new UserMessage(userInput);
     }
 
-    public Message createSystemMessage(String systemText) {
+    private Message createSystemMessage(String systemText) {
         SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(systemText);
         return systemPromptTemplate.createMessage();
     }
